@@ -31,12 +31,18 @@ public class Homework3 {
                 System.out.println(j + 1 + ") " + answerOptions[i][j]);
             }
 
-            System.out.print("Ваш ответ (введите цифру правильного варианта ответа): ");
-            int userAnswer = scanner.nextInt() - 1;
-            System.out.println("Введена не цифра, ответ засчитан как не правильный");
 
+            while (true) {
+                System.out.print("Ваш ответ (введите цифру правильного варианта ответа): ");
+                if (scanner.hasNextInt()) {
+                    break;
+                } else {
+                    String line = scanner.nextLine();
+                }
+            }
+            int userAnswer = scanner.nextInt();
 
-            if (userAnswer == correctAnswers[i]) {
+            if ((userAnswer - 1) == correctAnswers[i]) {
                 correctCount++;
             } else {
                 wrongCount++;
